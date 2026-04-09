@@ -1,215 +1,141 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abed Kazi — Digital Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-<style>
-[data-theme="dark"] {
-  --bg: #080808;
-  --bg2: #111111;
-  --card: rgba(25,25,25,0.95);
-  --border: rgba(255,255,255,0.12);
-  --accent: #c8f03c;
-  --accent-glow: rgba(200,240,60,0.5);
-  --text: #f0ede6;
-  --text2: #a8a8a8;
-}
-
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.75;
-}
-
-nav {
-  position: fixed; top:0; left:0; right:0; z-index:200;
-  padding: 1.2rem 4rem;
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--accent);
-}
-
-.hero {
-  min-height: 100vh;
-  padding: 0 4rem 7rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(200,240,60,0.2), transparent 70%);
-}
-h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(4rem, 9.5vw, 8.2rem);
-  font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-}
-h1 em {
-  font-style: normal;
-  color: transparent;
-  -webkit-text-stroke: 2.8px var(--accent);
-}
-
-#gallery {
-  background: var(--bg2);
-  padding: 8rem 4rem;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-}
-.gallery-item {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-.gallery-item:hover {
-  transform: scale(1.05) translateY(-10px);
-  border-color: var(--accent);
-  box-shadow: 0 25px 60px var(--accent-glow);
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-.gallery-item:hover img {
-  transform: scale(1.12);
-}
-.gallery-item-label {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.9));
-  padding: 2rem 1.2rem 1.2rem;
-  color: #fff;
-  font-size: 0.84rem;
-  transform: translateY(40%);
-  transition: all 0.4s ease;
-}
-.gallery-item:hover .gallery-item-label {
-  transform: translateY(0);
-}
-
-/* Lightbox */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 20px;
-}
-.lightbox.open {
-  display: flex;
-}
-.lightbox img {
-  max-width: 95vw;
-  max-height: 92vh;
-  border: 12px solid #222;
-  border-radius: 12px;
-  box-shadow: 0 0 80px var(--accent-glow);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abed Kazi - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            color: #c8f03c;
+            margin: 40px 0 10px;
+        }
+        p {
+            font-size: 1.3rem;
+            color: #aaa;
+            margin-bottom: 50px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .item {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .item:hover {
+            border-color: #c8f03c;
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .label {
+            padding: 15px;
+            background: #222;
+            font-size: 1rem;
+        }
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 10px solid #c8f03c;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">AK.</div>
-</nav>
+    <h1>Abed Kazi</h1>
+    <p>B.Tech Engineering Student<br>MIT Vishwaprayag University (2026)</p>
 
-<div class="hero">
-  <h1>Abed<br><em>Kazi</em></h1>
-  <p style="max-width:580px; color:var(--text2); font-size:1.1rem; margin:2.5rem 0 3.5rem;">
-    B.Tech Engineering Student at MIT Vishwaprayag University (Class of 2026)<br>
-    Passionate about Physics, Chemistry & Artificial Intelligence
-  </p>
-  <a href="#gallery" style="background:var(--accent); color:#0a0a0a; padding:1.1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:700; font-family:'Syne',sans-serif;">View My Certificates →</a>
-</div>
+    <h2 style="color:#c8f03c; margin:50px 0 30px;">My Certificates & Photo</h2>
 
-<section id="gallery">
-  <h2 style="font-family:'Syne',sans-serif; font-size:3.2rem; margin-bottom:2.5rem;">Certificates & Achievements</h2>
-  
-  <div class="gallery-grid">
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/photo.jpg" alt="Abed Kazi" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Photo+Missing';">
-      <div class="gallery-item-label">Profile Photo</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert1.jpg" alt="Certificate 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+1+Missing';">
-      <div class="gallery-item-label">Certificate 1 • Update Title</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert2.jpg" alt="Certificate 2" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+2+Missing';">
-      <div class="gallery-item-label">Certificate 2 • Update Title</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert3.jpg" alt="Certificate 3" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+3+Missing';">
-      <div class="gallery-item-label">Certificate 3 • Update Title</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert4.jpg" alt="Certificate 4" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+4+Missing';">
-      <div class="gallery-item-label">Certificate 4 • Update Title</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert5.jpg" alt="Certificate 5" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+5+Missing';">
-      <div class="gallery-item-label">Certificate 5 • Update Title</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert6.jpg" alt="Certificate 6" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+6+Missing';">
-      <div class="gallery-item-label">Certificate 6 • Update Title</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert7.jpg" alt="Certificate 7" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+7+Missing';">
-      <div class="gallery-item-label">Certificate 7 • Update Title</div>
-    </div>
-  </div>
-</section>
+    <div class="gallery">
+        <!-- Profile Photo -->
+        <div class="item" onclick="openLightbox(this)">
+            <img src="photo.jpg" alt="Abed Kazi">
+            <div class="label">Profile Photo</div>
+        </div>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
-  <img id="lightboxImg" src="" alt="">
-</div>
+        <!-- 7 Certificates -->
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert1.jpg" alt="Certificate 1">
+            <div class="label">Certificate 1</div>
+        </div>
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert2.jpg" alt="Certificate 2">
+            <div class="label">Certificate 2</div>
+        </div>
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert3.jpg" alt="Certificate 3">
+            <div class="label">Certificate 3</div>
+        </div>
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert4.jpg" alt="Certificate 4">
+            <div class="label">Certificate 4</div>
+        </div>
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert5.jpg" alt="Certificate 5">
+            <div class="label">Certificate 5</div>
+        </div>
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert6.jpg" alt="Certificate 6">
+            <div class="label">Certificate 6</div>
+        </div>
+        <div class="item" onclick="openLightbox(this)">
+            <img src="cert7.jpg" alt="Certificate 7">
+            <div class="label">Certificate 7</div>
+        </div>
+    </div>
 
-<script>
-function openLightbox(el) {
-  const imgSrc = el.querySelector('img').src;
-  document.getElementById('lightboxImg').src = imgSrc;
-  document.getElementById('lightbox').classList.add('open');
-}
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
 
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-}
+    <script>
+        function openLightbox(item) {
+            document.getElementById('lightboxImg').src = item.querySelector('img').src;
+            document.getElementById('lightbox').style.display = "flex";
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = "none";
+        }
+    </script>
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") closeLightbox();
-});
-</script>
 </body>
 </html>
