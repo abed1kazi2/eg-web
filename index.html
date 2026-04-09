@@ -7,197 +7,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 [data-theme="dark"] {
-  --bg: #080808;
-  --bg2: #111111;
-  --card: rgba(20,20,20,0.95);
-  --border: rgba(255,255,255,0.1);
-  --accent: #c8f03c;
-  --accent-glow: rgba(200,240,60,0.45);
-  --text: #f0ede6;
-  --text2: #a8a8a8;
-  --muted: #777;
+  --bg: #080808; --bg2: #111111; --card: rgba(20,20,20,0.95);
+  --border: rgba(255,255,255,0.1); --accent: #c8f03c;
+  --accent-glow: rgba(200,240,60,0.45); --text: #f0ede6;
+  --text2: #a8a8a8; --muted: #777;
 }
-
 * { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.75;
-}
+body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.75; }
 
 nav {
   position: fixed; top:0; left:0; right:0; z-index:200;
-  padding: 1.2rem 4rem;
-  background: rgba(10,10,10,0.92);
-  backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 4rem; background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(24px); border-bottom: 1px solid var(--border);
   display: flex; justify-content: space-between; align-items: center;
 }
-.nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--accent);
-}
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a {
-  color: var(--muted); text-decoration: none;
-  font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
-}
-.nav-links a:hover { color: var(--accent); }
+.nav-logo { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--accent); }
 
-/* HERO */
 .hero {
-  min-height: 100vh;
-  padding: 0 4rem 7rem;
-  display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 100vh; padding: 0 4rem 7rem; display: flex; flex-direction: column; justify-content: flex-end;
   position: relative;
 }
 .hero::before {
-  content: '';
-  position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0;
   background: radial-gradient(circle at 75% 25%, rgba(200,240,60,0.18), transparent 65%);
 }
 h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(4.2rem, 10vw, 8.5rem);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-family: 'Syne', sans-serif; font-size: clamp(4.2rem, 10vw, 8.5rem);
+  font-weight: 800; line-height: 0.9; letter-spacing: -0.05em;
 }
-h1 em { 
-  font-style: normal; 
-  color: transparent; 
-  -webkit-text-stroke: 2.5px var(--accent); 
-}
-.hero-sub {
-  max-width: 580px;
-  color: var(--text2);
-  font-size: 1.08rem;
-  margin: 2.2rem 0 3.5rem;
-}
-.btn-primary {
-  background: var(--accent);
-  color: #0a0a0a;
-  padding: 1.05rem 2.4rem;
-  border: none;
-  border-radius: 8px;
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 0.87rem;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  box-shadow: 0 0 25px var(--accent-glow);
-}
-.btn-primary:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px var(--accent-glow);
-}
+h1 em { font-style: normal; color: transparent; -webkit-text-stroke: 2.5px var(--accent); }
 
-/* GALLERY */
-#gallery { 
-  background: var(--bg2); 
-  padding: 8rem 4rem; 
-}
-.section-label {
-  color: var(--accent);
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 1.2rem;
-}
-h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2.6rem, 5.5vw, 3.6rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 3.5rem;
-}
-
+#gallery { background: var(--bg2); padding: 8rem 4rem; }
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 2.2rem;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 2.2rem;
 }
-
 .gallery-item {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-  transition: all 0.45s ease;
-  cursor: pointer;
+  position: relative; border-radius: 18px; overflow: hidden; background: var(--card);
+  border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: all 0.45s ease; cursor: pointer;
 }
 .gallery-item:hover {
-  transform: scale(1.06) translateY(-12px);
-  border-color: var(--accent);
+  transform: scale(1.06) translateY(-12px); border-color: var(--accent);
   box-shadow: 0 30px 70px var(--accent-glow);
 }
 .gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
+  width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease;
 }
-.gallery-item:hover img {
-  transform: scale(1.18);
-}
+.gallery-item:hover img { transform: scale(1.18); }
 .gallery-item-label {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+  position: absolute; bottom: 0; left: 0; right: 0;
   background: linear-gradient(transparent, rgba(0,0,0,0.92));
-  padding: 2.2rem 1.4rem 1.4rem;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transform: translateY(50%);
-  transition: transform 0.4s ease;
+  padding: 2.2rem 1.4rem 1.4rem; color: #fff; font-size: 0.85rem;
+  transform: translateY(50%); transition: transform 0.4s ease;
 }
-.gallery-item:hover .gallery-item-label {
-  transform: translateY(0);
-}
+.gallery-item:hover .gallery-item-label { transform: translateY(0); }
 
-/* FIXED LIGHTBOX */
+/* Lightbox */
 .lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.96);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 2rem;
-  cursor: pointer;
+  position: fixed; inset: 0; background: rgba(0,0,0,0.96);
+  display: none; align-items: center; justify-content: center;
+  z-index: 9999; padding: 2rem;
 }
-.lightbox.open {
-  display: flex;
-}
-.lightbox-content {
-  position: relative;
-  max-width: 94vw;
-  max-height: 90vh;
-}
+.lightbox.open { display: flex; }
 .lightbox img {
-  max-width: 100%;
-  max-height: 90vh;
-  border: 12px solid #1a1a1a;
-  border-radius: 12px;
-  box-shadow: 0 0 80px var(--accent-glow);
-  display: block;
-}
-.lightbox-close {
-  position: absolute;
-  top: -50px;
-  right: 0;
-  font-size: 3rem;
-  color: #fff;
-  cursor: pointer;
-  background: none;
-  border: none;
-  line-height: 1;
+  max-width: 94vw; max-height: 90vh; border: 12px solid #1a1a1a;
+  border-radius: 12px; box-shadow: 0 0 80px var(--accent-glow);
 }
 </style>
 </head>
@@ -205,84 +79,51 @@ h2 {
 
 <nav>
   <div class="nav-logo">AK.</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#gallery">Certificates</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <ul class="nav-links" style="display:flex; gap:2rem; list-style:none;">
+    <li><a href="#gallery" style="color:#aaa; text-decoration:none;">Certificates</a></li>
+    <!-- Add other links if needed -->
   </ul>
 </nav>
 
 <div class="hero">
   <h1>Abed<br><em>Kazi</em></h1>
-  <p class="hero-sub">B.Tech Engineering Student at MIT Vishwaprayag University (Class of 2026) — Passionate about Physics, Chemistry & Artificial Intelligence.</p>
-  <a href="#gallery" class="btn-primary">View My 7 Certificates →</a>
+  <p class="hero-sub" style="max-width:580px; color:var(--text2); font-size:1.08rem; margin:2.2rem 0 3.5rem;">
+    B.Tech Engineering Student at MIT Vishwaprayag University (Class of 2026)
+  </p>
+  <a href="#gallery" style="background:var(--accent); color:#0a0a0a; padding:1.05rem 2.4rem; border-radius:8px; text-decoration:none; font-weight:700;">View My Certificates →</a>
 </div>
 
 <section id="gallery">
-  <div class="section-label">Proof of Progress</div>
-  <h2>Certificates & Achievements</h2>
+  <h2 style="font-family:'Syne',sans-serif; font-size:3rem; margin-bottom:2rem;">My Certificates</h2>
   
   <div class="gallery-grid">
+    <!-- Replace titles with your actual certificate names -->
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert1.jpg" alt="Certificate 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+1';">
-      <div class="gallery-item-label">Certificate 1 • Title Here</div>
+      <img src="images/cert1.jpg" alt="Cert 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+1+Missing';">
+      <div class="gallery-item-label">Coursera • Engineering Physics</div>
     </div>
+    <!-- Repeat for cert2.jpg to cert7.jpg and change labels -->
+    <!-- Example for your photo (if you want to show it in gallery or about) -->
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert2.jpg" alt="Certificate 2" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+2';">
-      <div class="gallery-item-label">Certificate 2 • Title Here</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert3.jpg" alt="Certificate 3" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+3';">
-      <div class="gallery-item-label">Certificate 3 • Title Here</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert4.jpg" alt="Certificate 4" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+4';">
-      <div class="gallery-item-label">Certificate 4 • Title Here</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert5.jpg" alt="Certificate 5" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+5';">
-      <div class="gallery-item-label">Certificate 5 • Title Here</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert6.jpg" alt="Certificate 6" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+6';">
-      <div class="gallery-item-label">Certificate 6 • Title Here</div>
-    </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert7.jpg" alt="Certificate 7" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+7';">
-      <div class="gallery-item-label">Certificate 7 • Title Here</div>
+      <img src="images/photo.jpg" alt="Abed Kazi Photo" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Photo+Missing';">
+      <div class="gallery-item-label">Profile Photo</div>
     </div>
   </div>
 </section>
 
-<!-- Fixed Lightbox -->
-<div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()">×</button>
-    <img id="lightboxImg" src="" alt="Certificate">
-  </div>
+<div class="lightbox" id="lightbox" onclick="if(event.target===this) closeLightbox()">
+  <img id="lightboxImg" src="" alt="" style="max-width:94vw; max-height:90vh;">
 </div>
 
 <script>
 function openLightbox(el) {
-  const img = el.querySelector('img');
-  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightboxImg').src = el.querySelector('img').src;
   document.getElementById('lightbox').classList.add('open');
 }
-
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
 }
-
-// Close with Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === "Escape") {
-    closeLightbox();
-  }
-});
+document.addEventListener('keydown', e => { if (e.key === "Escape") closeLightbox(); });
 </script>
-
 </body>
 </html>
