@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abed Kazi - Portfolio</title>
+    <title>Abed Kazi — Digital Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             color: #f0f0f0;
             margin: 0;
             padding: 20px;
-            text-align: center;
+            line-height: 1.6;
         }
         h1 {
             font-size: 3.8rem;
@@ -19,44 +19,45 @@
             margin: 40px 0 10px;
         }
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: #aaa;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+        }
+        .hero-text {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.15rem;
         }
 
-        /* Profile Photo Section */
+        /* Profile Photo */
         .profile {
-            max-width: 320px;
-            margin: 0 auto 60px;
+            max-width: 340px;
+            margin: 40px auto 80px;
         }
         .profile img {
             width: 100%;
-            border-radius: 16px;
-            border: 4px solid #c8f03c;
-            box-shadow: 0 10px 30px rgba(200, 240, 60, 0.3);
-        }
-        .profile-label {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #c8f03c;
+            border-radius: 20px;
+            border: 5px solid #c8f03c;
+            box-shadow: 0 15px 40px rgba(200, 240, 60, 0.3);
         }
 
-        /* Certificates Gallery */
+        /* Certificates */
         h2 {
             color: #c8f03c;
-            margin: 70px 0 30px;
+            margin: 80px 0 40px;
+            font-size: 2.3rem;
         }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
+            gap: 22px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .cert-item {
             background: #1a1a1a;
             border: 2px solid #333;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
             transition: 0.3s;
         }
@@ -67,28 +68,28 @@
         .cert-item img {
             width: 100%;
             height: auto;
-            display: block;
         }
         .cert-label {
-            padding: 15px;
+            padding: 16px;
             background: #222;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         /* Lightbox */
         .lightbox {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            inset: 0;
             background: rgba(0,0,0,0.95);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 1000;
+            padding: 20px;
         }
         .lightbox img {
             max-width: 92%;
             max-height: 92%;
-            border: 10px solid #c8f03c;
+            border: 12px solid #c8f03c;
             border-radius: 12px;
         }
         .close {
@@ -104,58 +105,54 @@
 <body>
 
     <h1>Abed Kazi</h1>
-    <p class="subtitle">B.Tech Engineering Student<br>MIT Vishwaprayag University • Class of 2026</p>
+    <p class="subtitle">B.Tech · MIT Vishwaprayag University · 2026</p>
+    
+    <p class="hero-text">
+        Engineering student passionate about physics, chemistry, and AI — building a foundation where science meets technology and curiosity drives progress.
+    </p>
 
-    <!-- Profile Photo - Nicer Look -->
+    <!-- Profile Photo -->
     <div class="profile">
-        <img src="photo.jpg" alt="Abed Kazi Profile Photo" 
-             onerror="this.src='https://via.placeholder.com/320x400/1a1a1a/c8f03c?text=Photo+Not+Found';">
-        <div class="profile-label">Profile Photo</div>
+        <img src="photo.jpg" alt="Abed Kazi" 
+             onerror="this.src='https://via.placeholder.com/340x420/1a1a1a/c8f03c?text=Photo+Not+Found';">
     </div>
 
-    <!-- Certificates -->
+    <!-- Certificates Section -->
     <h2>My Certificates</h2>
     
     <div class="gallery">
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert1.jpg" alt="Certificate 1" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+1+Missing';">
-            <div class="cert-label">Certificate 1</div>
+            <img src="cert1.jpg" alt="Certificate 1">
+            <div class="cert-label">Engineering Physics Prerequisites</div>
         </div>
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert2.jpg" alt="Certificate 2" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+2+Missing';">
-            <div class="cert-label">Certificate 2</div>
+            <img src="cert2.jpg" alt="Certificate 2">
+            <div class="cert-label">Revisiting Chemistry</div>
         </div>
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert3.jpg" alt="Certificate 3" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+3+Missing';">
-            <div class="cert-label">Certificate 3</div>
+            <img src="cert3.jpg" alt="Certificate 3">
+            <div class="cert-label">Introduction to Modern AI</div>
         </div>
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert4.jpg" alt="Certificate 4" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+4+Missing';">
-            <div class="cert-label">Certificate 4</div>
+            <img src="cert4.jpg" alt="Certificate 4">
+            <div class="cert-label">Yuva AI for All</div>
         </div>
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert5.jpg" alt="Certificate 5" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+5+Missing';">
-            <div class="cert-label">Certificate 5</div>
+            <img src="cert5.jpg" alt="Certificate 5">
+            <div class="cert-label">SkillSpardha Workshop</div>
         </div>
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert6.jpg" alt="Certificate 6" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+6+Missing';">
-            <div class="cert-label">Certificate 6</div>
+            <img src="cert6.jpg" alt="Certificate 6">
+            <div class="cert-label">AI for All (Ai4A)</div>
         </div>
         <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert7.jpg" alt="Certificate 7" 
-                 onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Cert+7+Missing';">
-            <div class="cert-label">Certificate 7</div>
+            <img src="cert7.jpg" alt="Certificate 7">
+            <div class="cert-label">Design Thinking Workshop</div>
         </div>
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
         <span class="close" onclick="closeLightbox()">×</span>
         <img id="lightboxImg" src="" alt="">
     </div>
