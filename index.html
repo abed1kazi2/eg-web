@@ -17,17 +17,6 @@
   --text2: #a8a8a8;
   --muted: #777;
 }
-[data-theme="light"] {
-  --bg: #f8f6f0;
-  --bg2: #f0ede4;
-  --card: rgba(255,255,255,0.97);
-  --border: rgba(0,0,0,0.12);
-  --accent: #5a8c00;
-  --accent-glow: rgba(90,140,0,0.35);
-  --text: #111;
-  --text2: #555;
-  --muted: #888;
-}
 
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -50,7 +39,6 @@ nav {
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--accent);
-  letter-spacing: -0.03em;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
@@ -59,6 +47,7 @@ nav {
 }
 .nav-links a:hover { color: var(--accent); }
 
+/* HERO */
 .hero {
   min-height: 100vh;
   padding: 0 4rem 7rem;
@@ -106,7 +95,7 @@ h1 em {
   box-shadow: 0 15px 40px var(--accent-glow);
 }
 
-/* Gallery - Attractive Certificate Display */
+/* GALLERY */
 #gallery { 
   background: var(--bg2); 
   padding: 8rem 4rem; 
@@ -171,25 +160,44 @@ h2 {
   transform: translateY(0);
 }
 
-/* Lightbox */
+/* FIXED LIGHTBOX */
 .lightbox {
-  position: fixed; inset: 0; z-index: 9999;
+  position: fixed;
+  inset: 0;
   background: rgba(0,0,0,0.96);
-  display: none; align-items: center; justify-content: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
   padding: 2rem;
+  cursor: pointer;
 }
-.lightbox.open { display: flex; }
-.lightbox img {
+.lightbox.open {
+  display: flex;
+}
+.lightbox-content {
+  position: relative;
   max-width: 94vw;
   max-height: 90vh;
-  border: 10px solid #1a1a1a;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  border: 12px solid #1a1a1a;
   border-radius: 12px;
   box-shadow: 0 0 80px var(--accent-glow);
+  display: block;
 }
 .lightbox-close {
-  position: absolute; top: 30px; right: 40px;
-  font-size: 3rem; color: #ddd; cursor: pointer;
-  background: none; border: none;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
 }
 </style>
 </head>
@@ -213,59 +221,66 @@ h2 {
   <a href="#gallery" class="btn-primary">View My 7 Certificates →</a>
 </div>
 
-<!-- Gallery with 7 Certificates -->
 <section id="gallery">
   <div class="section-label">Proof of Progress</div>
   <h2>Certificates & Achievements</h2>
   
   <div class="gallery-grid">
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert1.jpg" alt="Certificate 1">
+      <img src="images/cert1.jpg" alt="Certificate 1" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+1';">
       <div class="gallery-item-label">Certificate 1 • Title Here</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert2.jpg" alt="Certificate 2">
+      <img src="images/cert2.jpg" alt="Certificate 2" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+2';">
       <div class="gallery-item-label">Certificate 2 • Title Here</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert3.jpg" alt="Certificate 3">
+      <img src="images/cert3.jpg" alt="Certificate 3" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+3';">
       <div class="gallery-item-label">Certificate 3 • Title Here</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert4.jpg" alt="Certificate 4">
+      <img src="images/cert4.jpg" alt="Certificate 4" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+4';">
       <div class="gallery-item-label">Certificate 4 • Title Here</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert5.jpg" alt="Certificate 5">
+      <img src="images/cert5.jpg" alt="Certificate 5" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+5';">
       <div class="gallery-item-label">Certificate 5 • Title Here</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert6.jpg" alt="Certificate 6">
+      <img src="images/cert6.jpg" alt="Certificate 6" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+6';">
       <div class="gallery-item-label">Certificate 6 • Title Here</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="images/cert7.jpg" alt="Certificate 7">
+      <img src="images/cert7.jpg" alt="Certificate 7" onerror="this.src='https://via.placeholder.com/600x400/1a1a1a/c8f03c?text=Certificate+7';">
       <div class="gallery-item-label">Certificate 7 • Title Here</div>
     </div>
   </div>
 </section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <img id="lightboxImg" src="" alt="Certificate">
+<!-- Fixed Lightbox -->
+<div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightboxImg" src="" alt="Certificate">
+  </div>
 </div>
 
 <script>
 function openLightbox(el) {
-  document.getElementById('lightboxImg').src = el.querySelector('img').src;
+  const img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
   document.getElementById('lightbox').classList.add('open');
 }
+
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
 }
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
+
+// Close with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === "Escape") {
+    closeLightbox();
+  }
 });
 </script>
 
