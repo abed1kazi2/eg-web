@@ -3,83 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abed Kazi — Digital Portfolio</title>
+    <title>Abed Kazi | B.Tech Engineering Student</title>
     <style>
+        :root {
+            --accent: #c8f03c;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', 'Helvetica', sans-serif;
             background: #0a0a0a;
             color: #f0f0f0;
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 0;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero */
+        header {
+            text-align: center;
+            padding: 100px 20px 80px;
+            background: linear-gradient(to bottom, #111, #0a0a0a);
         }
         h1 {
-            font-size: 3.8rem;
-            color: #c8f03c;
-            margin: 40px 0 10px;
+            font-size: 4.2rem;
+            margin: 0;
+            color: var(--accent);
         }
-        .subtitle {
-            font-size: 1.35rem;
-            color: #aaa;
-            margin-bottom: 50px;
+        .tagline {
+            font-size: 1.4rem;
+            color: #bbb;
+            margin: 15px 0 30px;
         }
-        .hero-text {
-            max-width: 700px;
-            margin: 0 auto 60px;
-            font-size: 1.15rem;
+
+        /* About Me */
+        .about {
+            padding: 80px 0;
+            background: #111;
+        }
+        .section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         /* Profile Photo */
-        .profile {
-            max-width: 340px;
-            margin: 40px auto 80px;
-        }
-        .profile img {
-            width: 100%;
+        .profile-photo {
+            max-width: 320px;
+            margin: 0 auto 40px;
             border-radius: 20px;
-            border: 5px solid #c8f03c;
-            box-shadow: 0 15px 40px rgba(200, 240, 60, 0.3);
+            border: 6px solid var(--accent);
+            box-shadow: 0 15px 40px rgba(200, 240, 60, 0.25);
+            overflow: hidden;
         }
 
         /* Certificates */
-        h2 {
-            color: #c8f03c;
-            margin: 80px 0 40px;
-            font-size: 2.3rem;
+        .certificates {
+            padding: 80px 0;
         }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 25px;
+            margin-top: 40px;
         }
         .cert-item {
             background: #1a1a1a;
             border: 2px solid #333;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
         .cert-item:hover {
-            border-color: #c8f03c;
-            transform: scale(1.05);
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(200, 240, 60, 0.2);
         }
         .cert-item img {
             width: 100%;
             height: auto;
+            display: block;
         }
         .cert-label {
-            padding: 16px;
+            padding: 18px;
             background: #222;
+            text-align: center;
             font-size: 1.05rem;
+        }
+
+        /* About Project */
+        .project-info {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .contact a:hover {
+            text-decoration: underline;
         }
 
         /* Lightbox */
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.96);
             display: none;
             align-items: center;
             justify-content: center;
@@ -89,79 +129,128 @@
         .lightbox img {
             max-width: 92%;
             max-height: 92%;
-            border: 12px solid #c8f03c;
+            border: 12px solid var(--accent);
             border-radius: 12px;
         }
-        .close {
+        .close-btn {
             position: absolute;
-            top: 25px;
-            right: 35px;
+            top: 30px;
+            right: 40px;
             font-size: 50px;
-            color: white;
+            color: #fff;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <h1>Abed Kazi</h1>
-    <p class="subtitle">B.Tech · MIT Vishwaprayag University · 2026</p>
-    
-    <p class="hero-text">
-        Engineering student passionate about physics, chemistry, and AI — building a foundation where science meets technology and curiosity drives progress.
-    </p>
+    <!-- Hero Section -->
+    <header>
+        <div class="container">
+            <h1>Abed Kazi</h1>
+            <p class="tagline">B.Tech Engineering Student | MIT Vishwaprayag University | Class of 2026</p>
+            <p class="hero-text" style="max-width:720px; margin:0 auto; font-size:1.2rem; color:#ddd;">
+                Passionate about Physics, Chemistry, and Artificial Intelligence. 
+                Building strong foundations in science and technology to solve real-world problems.
+            </p>
+        </div>
+    </header>
 
-    <!-- Profile Photo -->
-    <div class="profile">
-        <img src="photo.jpg" alt="Abed Kazi" 
-             onerror="this.src='https://via.placeholder.com/340x420/1a1a1a/c8f03c?text=Photo+Not+Found';">
-    </div>
+    <!-- About Me -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="profile-photo">
+                <img src="photo.jpg" alt="Abed Kazi Profile Photo" 
+                     onerror="this.src='https://via.placeholder.com/320x420/1a1a1a/c8f03c?text=Photo+Not+Found';">
+            </div>
+            <p style="max-width:700px; margin:0 auto; text-align:center; font-size:1.1rem;">
+                I am a first-year B.Tech student with a strong interest in Engineering Physics, Applied Chemistry, 
+                and emerging technologies like Machine Learning and AI. 
+                My goal is to bridge theoretical knowledge with practical applications through projects and continuous learning.
+            </p>
+        </div>
+    </section>
 
-    <!-- Certificates Section -->
-    <h2>My Certificates</h2>
-    
-    <div class="gallery">
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert1.jpg" alt="Certificate 1">
-            <div class="cert-label">Engineering Physics Prerequisites</div>
+    <!-- Certificates -->
+    <section class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates & Achievements</h2>
+            <div class="gallery">
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert1.jpg" alt="Certificate 1">
+                    <div class="cert-label">Engineering Physics Prerequisites</div>
+                </div>
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert2.jpg" alt="Certificate 2">
+                    <div class="cert-label">Revisiting Chemistry</div>
+                </div>
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert3.jpg" alt="Certificate 3">
+                    <div class="cert-label">Introduction to Modern AI</div>
+                </div>
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert4.jpg" alt="Certificate 4">
+                    <div class="cert-label">Yuva AI for All</div>
+                </div>
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert5.jpg" alt="Certificate 5">
+                    <div class="cert-label">SkillSpardha Workshop</div>
+                </div>
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert6.jpg" alt="Certificate 6">
+                    <div class="cert-label">AI for All Initiative</div>
+                </div>
+                <div class="cert-item" onclick="openLightbox(this)">
+                    <img src="cert7.jpg" alt="Certificate 7">
+                    <div class="cert-label">Design Thinking Workshop</div>
+                </div>
+            </div>
         </div>
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert2.jpg" alt="Certificate 2">
-            <div class="cert-label">Revisiting Chemistry</div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="project-info">
+        <div class="container">
+            <h2 class="section-title">About This Portfolio</h2>
+            <p style="max-width:800px; margin:0 auto; text-align:center; font-size:1.1rem;">
+                This is a clean, responsive digital portfolio built using pure HTML and CSS. 
+                It showcases my academic journey, certificates, and interests in science and technology. 
+                The design focuses on simplicity, professionalism, and easy navigation. 
+                All images are hosted directly in the repository root for easy deployment on GitHub Pages.
+            </p>
         </div>
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert3.jpg" alt="Certificate 3">
-            <div class="cert-label">Introduction to Modern AI</div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="font-size:1.1rem; margin-bottom:30px;">
+                Open to discussions, collaborations, or internship opportunities in AI, Physics, or Engineering.
+            </p>
+            <p>
+                <a href="mailto:abedkazi@example.com">abedkazi@example.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+                <a href="https://github.com/abed1kazi2" target="_blank">GitHub</a>
+            </p>
         </div>
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert4.jpg" alt="Certificate 4">
-            <div class="cert-label">Yuva AI for All</div>
-        </div>
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert5.jpg" alt="Certificate 5">
-            <div class="cert-label">SkillSpardha Workshop</div>
-        </div>
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert6.jpg" alt="Certificate 6">
-            <div class="cert-label">AI for All (Ai4A)</div>
-        </div>
-        <div class="cert-item" onclick="openLightbox(this)">
-            <img src="cert7.jpg" alt="Certificate 7">
-            <div class="cert-label">Design Thinking Workshop</div>
-        </div>
-    </div>
+    </section>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
-        <span class="close" onclick="closeLightbox()">×</span>
-        <img id="lightboxImg" src="" alt="">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightboxImg" src="" alt="Certificate">
     </div>
 
     <script>
+        // Open image in lightbox
         function openLightbox(item) {
-            document.getElementById('lightboxImg').src = item.querySelector('img').src;
+            const imgSrc = item.querySelector('img').src;
+            document.getElementById('lightboxImg').src = imgSrc;
             document.getElementById('lightbox').style.display = "flex";
         }
+
+        // Close lightbox
         function closeLightbox() {
             document.getElementById('lightbox').style.display = "none";
         }
