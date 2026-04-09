@@ -41,6 +41,121 @@
             box-shadow: 0 15px 40px rgba(200, 240, 60, 0.3);
         }
 
+        /* About Me */
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: left;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 18px;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .about-card {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 14px;
+            padding: 24px 20px;
+            transition: 0.3s;
+        }
+        .about-card:hover {
+            border-color: #c8f03c;
+        }
+        .about-card .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .about-card h3 {
+            color: #c8f03c;
+            font-size: 1rem;
+            margin: 0 0 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .about-card p {
+            font-size: 0.95rem;
+            color: #aaa;
+            margin: 0;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 14px;
+            padding: 28px 24px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: #c8f03c;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+        .project-card:hover {
+            border-color: #c8f03c;
+            transform: translateY(-4px);
+        }
+        .project-tag {
+            display: inline-block;
+            background: #2a2a2a;
+            color: #c8f03c;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #c8f03c44;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .project-card h3 {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            margin: 0 0 12px;
+        }
+        .project-card p {
+            color: #aaa;
+            font-size: 0.97rem;
+            margin: 0 0 18px;
+            line-height: 1.7;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tech-pill {
+            background: #222;
+            color: #ddd;
+            font-size: 0.78rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #444;
+        }
+
         /* Certificates */
         h2 {
             color: #c8f03c;
@@ -100,6 +215,19 @@
             color: white;
             cursor: pointer;
         }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 100px;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        .footer span {
+            color: #c8f03c;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +243,121 @@
     <div class="profile">
         <img src="photo.jpg" alt="Abed Kazi" 
              onerror="this.src='https://via.placeholder.com/340x420/1a1a1a/c8f03c?text=Photo+Not+Found';">
+    </div>
+
+    <!-- About Me -->
+    <h2>About Me</h2>
+    <div class="about-section">
+        <p>
+            I'm Abed Kazi, a B.Tech student at MIT Vishwaprayag University, Aurangabad, currently in my final year (Class of 2026). 
+            Growing up, I was always the kind of person who wanted to understand <em>why</em> things work — why a circuit lights up, 
+            why chemicals react, why machines can now think. That curiosity never left me, and it's what brought me to engineering.
+        </p>
+        <p>
+            My academic journey has been shaped by a deep love for core sciences — Physics and Chemistry were never just subjects for me, 
+            they were puzzles I genuinely enjoyed solving. Over time, that passion expanded into Artificial Intelligence, 
+            where I see the future of technology unfolding in real time.
+        </p>
+        <p>
+            Outside of academics, I enjoy exploring new technologies, taking part in workshops and skill-building programs, 
+            and staying updated with the latest developments in AI and engineering. I believe in learning by doing — 
+            every certificate, every project, and every workshop has been a step toward becoming a well-rounded engineer.
+        </p>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="icon">🎯</div>
+                <h3>Career Goal</h3>
+                <p>To work at the intersection of AI and engineering — building intelligent systems that solve real-world problems.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🔬</div>
+                <h3>Core Interests</h3>
+                <p>Physics, Chemistry, Artificial Intelligence, Machine Learning, and emerging technologies.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">📚</div>
+                <h3>Currently Learning</h3>
+                <p>Advanced AI concepts, design thinking, and modern software development practices.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🌱</div>
+                <h3>Philosophy</h3>
+                <p>Curiosity is the engine of progress. Every question asked is a step closer to an answer worth finding.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <span class="project-tag">Physics Lab</span>
+            <h3>Study of Ohm's Law & Circuit Analysis</h3>
+            <p>Conducted experimental verification of Ohm's Law using resistor networks, measured voltage-current relationships, and analyzed series vs parallel circuits. Documented observations and compared results with theoretical predictions.</p>
+            <div class="project-tech">
+                <span class="tech-pill">Circuit Analysis</span>
+                <span class="tech-pill">Multimeter</span>
+                <span class="tech-pill">DC Circuits</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">Chemistry Lab</span>
+            <h3>Chemical Reaction Rate Analysis</h3>
+            <p>Investigated how temperature and concentration affect the rate of chemical reactions. Performed titration experiments and recorded kinetic data, applying concepts of activation energy and reaction mechanisms.</p>
+            <div class="project-tech">
+                <span class="tech-pill">Chemical Kinetics</span>
+                <span class="tech-pill">Titration</span>
+                <span class="tech-pill">Data Analysis</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">AI / Workshop</span>
+            <h3>AI Awareness & Application Research</h3>
+            <p>As part of the Yuva AI for All and Ai4A programs, explored real-world applications of Artificial Intelligence across healthcare, education, and industry. Prepared a report on AI's societal impact and ethical considerations.</p>
+            <div class="project-tech">
+                <span class="tech-pill">Artificial Intelligence</span>
+                <span class="tech-pill">Research</span>
+                <span class="tech-pill">Ethics in AI</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">Design Thinking</span>
+            <h3>Problem-Solving with Design Thinking</h3>
+            <p>Participated in a structured Design Thinking workshop where teams identified real user problems, brainstormed innovative solutions, and built low-fidelity prototypes. Focused on empathy-driven engineering and iterative design.</p>
+            <div class="project-tech">
+                <span class="tech-pill">Design Thinking</span>
+                <span class="tech-pill">Prototyping</span>
+                <span class="tech-pill">Team Collaboration</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">Engineering</span>
+            <h3>Physics Prerequisites — Concept Mapping</h3>
+            <p>Created detailed concept maps and summaries covering core engineering physics topics including wave mechanics, thermodynamics, and optics. Used as a study reference resource for junior batchmates.</p>
+            <div class="project-tech">
+                <span class="tech-pill">Wave Mechanics</span>
+                <span class="tech-pill">Thermodynamics</span>
+                <span class="tech-pill">Optics</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">Skill Development</span>
+            <h3>SkillSpardha Competitive Workshop</h3>
+            <p>Competed in SkillSpardha, a university-level skill competition testing technical knowledge, problem-solving under pressure, and applied engineering concepts. Gained hands-on experience in a competitive academic environment.</p>
+            <div class="project-tech">
+                <span class="tech-pill">Problem Solving</span>
+                <span class="tech-pill">Technical Skills</span>
+                <span class="tech-pill">Competition</span>
+            </div>
+        </div>
+
     </div>
 
     <!-- Certificates -->
@@ -155,6 +398,12 @@
     <div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
         <span class="close" onclick="closeLightbox()">×</span>
         <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Designed & built by <span>Abed Kazi</span> · MIT Vishwaprayag University · Class of 2026</p>
+        <p>Aurangabad, Maharashtra, India</p>
     </div>
 
     <script>
